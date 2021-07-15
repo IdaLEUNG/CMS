@@ -1,0 +1,51 @@
+﻿@model prjCMS.Models.cCar
+
+@{
+    ViewBag.Title = "Car Detail";
+}
+
+
+<div class="detail-content">
+    <h3>
+    <b>@Html.DisplayFor(model => model.cMake) - @Html.DisplayFor(model => model.cModel)</b>
+    </h3>
+    <table class="table" border="0">
+        <tr>
+            <td rowspan="9" width="400px">
+                <img src="@ViewBag.ImageURL" alt="Car Image" height="230px" width="350px">
+
+        </tr>
+        <tr>
+            <td width="100px"><b>Year</b></td>
+            <td>@Html.DisplayFor(model => model.cYear)</td>
+        </tr>
+        <tr>
+            <td width="100px"><b>Gear</b></td>
+            <td>@Html.DisplayFor(model => model.cGear)</td>
+        </tr>
+        <tr>
+            <td width="100px"><b>Body</b></td>
+            <td>@Html.DisplayFor(model => model.cBody)</td>
+        </tr>
+        <tr>
+            <td width="100px"><b>Fuel</b></td>
+            <td>@Html.DisplayFor(model => model.cFuel)</td>
+        </tr>
+        <tr>
+            <td width="100px"><b>Door</b></td>
+            <td>@Html.DisplayFor(model => model.cDoor)</td>
+        </tr>
+        <tr>
+            <td width="100px"><b>Color</b></td>
+            <td>@Html.DisplayFor(model => model.cColor)</td>
+        </tr>
+        <tr>
+            <td width="100px"><b>Mileage</b></td>
+            <td>@Html.DisplayFor(model => model.cMileage)</td>
+        </tr>
+        <tr>
+            <td width="100px"><b>Engine</b></td>
+            <td>@Html.DisplayFor(model => model.cEngine)L</td>
+        </tr>
+    </table>
+</div>

@@ -1,0 +1,41 @@
+﻿@model IEnumerable<prjCMS.Models.cCar>
+
+@{
+    ViewBag.Title = "Search Result";
+}
+
+    <div class="search-heading">
+        <div class="container">
+                <div class="col-lg-6 info mb-lg-0 mb-5 align-center">
+                    <table class="table">
+                        @foreach (var item in Model)
+                        {
+                            <tr>
+                                <td>
+                                    <img src="@item.cPhoto" class="img-responsive" style="width:180px; height: 130px; " />
+                                </td>
+
+                                <td>
+                                    <h4>
+                                        <strong><b>@item.cMake @item.cModel </b></strong><br />
+                                        <b>Year</b> : @item.cYear
+                                        <br /><br />
+                                        <b>Mileage : </b>@item.cMileage | <b>Doors :</b> @item.cDoor
+                                        <br />
+                                        @item.cColor | @item.cBody | @item.cEngine L | @item.cGear | @item.cFuel
+                                    </h4>
+                                
+                                    <h4>
+                                        <a href="@Url.Action("Detail", "Home",new { cId = @item.cId })" class="btn btn-info btn-sm" target="_blank">
+                                        More Information
+                                        </a>
+                                    </h4>
+                                </td>
+                            </tr>
+                        }
+                    </table>
+            </div>
+        </div>
+    </div>
+
+

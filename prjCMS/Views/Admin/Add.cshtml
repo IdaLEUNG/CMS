@@ -1,0 +1,160 @@
+﻿@model prjCMS.Models.cCar
+
+@{
+    ViewBag.Title = "Add";
+    Layout = "~/Views/Shared/_LayoutAdmin.cshtml";
+}
+
+<h2>Add New Record</h2>
+
+@using (Html.BeginForm()) 
+{
+    @Html.AntiForgeryToken()
+    
+    <div class="form-horizontal">
+        <h4>Car Details</h4>
+        <hr />
+        @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+        <div class="form-group">
+            @Html.Label("Make", htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                <select id="cMake" name="cMake" class="form-control">
+                    @foreach (var item in ViewBag.ListMake)
+                    {
+                        <option value="@item.cmMake">@item.cmMake</option>
+                    }
+                </select>
+                @Html.ValidationMessageFor(model => model.cMake, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.Label("Model", htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                <select id="cModel" name="cModel" class="form-control">
+                    @foreach (var item in ViewBag.ListModel)
+                    {
+                        <option value="@item.cmModel">@item.cmModel</option>
+                    }
+                </select>
+                @Html.ValidationMessageFor(model => model.cModel, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.Label("Year", htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.cYear, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.cYear, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.Label("Gear Type", htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                <select id="cGear" name="cGear" class="form-control">
+                    @foreach (var item in ViewBag.ListGear)
+                    {
+                        <option value="@item.cgName">@item.cgName</option>
+                    }
+                </select>
+                @Html.ValidationMessageFor(model => model.cGear, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.Label("Body Type", htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                <select id="cBody" name="cBody" class="form-control">
+                    @foreach (var item in ViewBag.ListBody)
+                    {
+                        <option value="@item.cbName">@item.cbName</option>
+                    }
+                </select>
+                @Html.ValidationMessageFor(model => model.cBody, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.Label("Fuel Type", htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                <select id="cFuel" name="cFuel" class="form-control">
+                    @foreach (var item in ViewBag.ListFuel)
+                    {
+                        <option value="@item.cfName">@item.cfName</option>
+                    }
+                </select>
+                @Html.ValidationMessageFor(model => model.cFuel, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.Label("Door", htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                <select id="cDoor" name="cDoor" class="form-control">
+                    @for (var n = 1; n < 10; n++)
+                    {
+                        <option value="@n">@n</option>
+                    }
+                </select>
+                @Html.ValidationMessageFor(model => model.cDoor, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.Label("Color", htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                <select id="cColor" name="cColor" class="form-control">
+                    @foreach (var item in ViewBag.ListColor)
+                    {
+                        <option value="@item.crName">@item.crName</option>
+                    }
+                </select>
+                @Html.ValidationMessageFor(model => model.cColor, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.Label("Photo URL", htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.cPhoto, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.cPhoto, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.Label("Mileage", htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.cMileage, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.cMileage, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.Label("Engine Type", htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                <select id="cEngine" name="cEngine" class="form-control">
+                    @foreach (var item in ViewBag.ListEngine)
+                    {
+                        <option value="@item.ceType">@item.ceType</option>
+                    }
+                </select>
+                @Html.ValidationMessageFor(model => model.cEngine, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            <div class="col-md-offset-2 col-md-10">
+                <input type="submit" value="Create" class="btn btn-primary btn-sm" />
+                <a href="@Url.Action("Function")" class="btn btn-primary btn-sm">Cancel</a>
+            </div>
+        </div>
+    </div>
+}
+
+<div>
+    <br />
+    <a href="@Url.Action("Function", "Admin")" class="btn btn-default btn-sm">
+        Back to Admin Menu
+    </a>
+</div>

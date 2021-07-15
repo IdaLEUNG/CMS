@@ -1,0 +1,51 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>@ViewBag.Title - CMS</title>
+    <link href="~/Content/Site.css" rel="stylesheet" type="text/css" />
+    <link href="~/Content/bootstrap.min.css" rel="stylesheet" type="text/css" />
+
+    <script src="~/Scripts/modernizr-2.8.3.js"></script>
+    <script src="~/Scripts/jquery-3.4.1.min.js"></script>
+    <script src="~/Scripts/bootstrap.min.js"></script>
+    <script src="~/Scripts/bootstrap.js"></script>
+
+</head>
+<body>
+    <div class="navbar navbar-default navbar-fixed-top">
+        <div class="container">
+            <div class="navbar-header">
+                <div class="navbar-header pull-left">
+                    <a class="navbar-brand" href="@Url.Action("Function", "Admin")">
+                        <img src="~/Images/bg_Logo.jpg" alt="Site Logo" style="height:30px; width: 70px" />
+                    </a>
+                </div>
+                <button type="button" class="navbar-toggle navbar-right" data-toggle="collapse" data-target=".navbar-collapse">
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+
+            </div>
+            <div class="navbar-collapse collapse navbar-right">
+                <ul class="nav navbar-nav">
+                    <li><a href="#">@Session["WelCome"]</a></li>
+                    <li>@Html.ActionLink("Log Out", "Logout", new { controller = "Admin" }, new { @class = "myLinkClass" })</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <p></p>
+    <div class="container body-content">
+        @RenderBody()
+    </div>
+
+    <div class="container">
+        <hr />
+        <footer>
+            <p>&copy; @DateTime.Now.Year - CMS. All Rights Reserved </p>
+        </footer>
+    </div>
+</body>
+</html>

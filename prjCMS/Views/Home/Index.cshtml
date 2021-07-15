@@ -1,0 +1,110 @@
+﻿@model prjCMS.Models.cCar
+
+@{
+    ViewBag.Title = "CMS Home";
+}
+
+<section class="agile-body">
+    <div class="agile-heading">
+        <div class="container">
+            <div class="row about-content">
+                <div class="col-lg-6 info mb-lg-0 mb-5 align-center">
+                    <div class="agile-form">
+                        <h3><span class="image"><b>CMS Home</b><br /><br /></span></h3>
+                        <h4><span class="image"><b>Find Car ... </b></span></h4>
+
+                        <form method="post" action="@Url.Action("Index")">
+                            <p1><b>Make</b></p1>
+                            <p1>
+                                <div class="form-group">
+                                    <select id="cMake" name="cMake" class="form-control">
+                                        <option value=""></option>
+                                        @foreach (var item in @ViewBag.ListMake)
+                                        {
+                                            <option value="@item.cmMake">@item.cmMake</option>
+                                        }
+                                    </select>
+                                </div>
+                            </p1>
+
+                            <p1><b>Body Type</b></p1>
+                            <p1>
+                                <div class="form-group">
+                                    <select id="cBody" name="cBody" class="form-control">
+                                        <option value=""></option>
+                                        @foreach (var item in @ViewBag.ListBody)
+                                        {
+                                            <option value="@item.cbName">@item.cbName</option>
+                                        }
+                                    </select>
+                                </div>
+                            </p1>
+
+                            <p1><b>Fuel Type</b></p1>
+                            <p1>
+                                <div class="form-group">
+                                    <select id="cFuel" name="cFuel" class="form-control">
+                                        <option value=""></option>
+                                        @foreach (var item in @ViewBag.ListFuel)
+                                        {
+                                            <option value="@item.cfName">@item.cfName</option>
+                                        }
+                                    </select>
+                                </div>
+                            </p1>
+
+                            <p1><b>Gear Type</b></p1>
+                            <p1>
+                                <div class="form-group">
+                                    <select id="cGear" name="cGear" class="form-control">
+                                        <option value=""></option>
+                                        @foreach (var item in @ViewBag.ListGear)
+                                        {
+                                            <option value="@item.cgName">@item.cgName</option>
+                                        }
+                                    </select>
+                                </div>
+                            </p1>
+
+                            <p1><b>Color</b></p1>
+                            <p1>
+                                <div class="form-group">
+                                    <select id="cColor" name="cColor" class="form-control">
+                                        <option value=""></option>
+                                        @foreach (var item in @ViewBag.ListColor)
+                                        {
+                                            <option value="@item.crName">@item.crName</option>
+                                        }
+                                    </select>
+                                </div>
+                            </p1>
+
+                            <p1><b>Engine Type</b></p1>
+                            <p1>
+                                <div class="form-group">
+                                    <select id="cEngine" name="cEngine" class="form-control">
+                                        <option value=null></option>
+                                        @foreach (var item in @ViewBag.ListEngine)
+                                        {
+                                            <option value="@item.ceType">@item.ceType</option>
+                                        }
+                                    </select>
+                                </div>
+                            </p1>
+
+                            <hr />
+                            <div class="form-group">
+                                <span class="col-md-offset-1 col-md-10">
+                                    <input type="submit" value="Search" class="btn btn-primary btn-sm btn-block" />
+                                </span>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+</section>
+
+
+
+

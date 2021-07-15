@@ -1,0 +1,348 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+    <Schema Namespace="dbCMSModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <!--Errors Found During Generation:
+warning 6002: The table/view 'D:\TRAINING\PROGRAM\ASP.NET\SLNCMS\PRJCMS\APP_DATA\DBCMS.MDF.dbo.cAdmin' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+        <EntityType Name="cAdmin">
+          <Key>
+            <PropertyRef Name="cId" />
+            <PropertyRef Name="cUserId" />
+            <PropertyRef Name="cPwd" />
+            <PropertyRef Name="cName" />
+          </Key>
+          <Property Name="cId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="cUserId" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="cPwd" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="cName" Type="nvarchar" MaxLength="50" Nullable="false" />
+        </EntityType>
+        <EntityType Name="cBody">
+          <Key>
+            <PropertyRef Name="cbId" />
+          </Key>
+          <Property Name="cbId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="cbName" Type="varchar" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="cCar">
+          <Key>
+            <PropertyRef Name="cId" />
+          </Key>
+          <Property Name="cId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="cMake" Type="nvarchar" MaxLength="100" Nullable="false" />
+          <Property Name="cModel" Type="nvarchar" MaxLength="100" Nullable="false" />
+          <Property Name="cYear" Type="int" Nullable="false" />
+          <Property Name="cGear" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="cBody" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="cFuel" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="cDoor" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="cColor" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="cPhoto" Type="nvarchar" MaxLength="250" />
+          <Property Name="cMileage" Type="int" Nullable="false" />
+          <Property Name="cEngine" Type="numeric" Precision="3" Scale="1" Nullable="false" />
+        </EntityType>
+        <EntityType Name="cColor">
+          <Key>
+            <PropertyRef Name="crId" />
+          </Key>
+          <Property Name="crId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="crName" Type="nvarchar" MaxLength="50" Nullable="false" />
+        </EntityType>
+        <EntityType Name="cContact">
+          <Key>
+            <PropertyRef Name="cCId" />
+          </Key>
+          <Property Name="cCId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="cCName" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="cCEmail" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="cCType" Type="nvarchar" MaxLength="100" Nullable="false" />
+          <Property Name="cCMessage" Type="nvarchar(max)" />
+        </EntityType>
+        <EntityType Name="cEngine">
+          <Key>
+            <PropertyRef Name="ceId" />
+          </Key>
+          <Property Name="ceId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="ceType" Type="numeric" Precision="3" Scale="1" />
+        </EntityType>
+        <EntityType Name="cFuel">
+          <Key>
+            <PropertyRef Name="cfId" />
+          </Key>
+          <Property Name="cfId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="cfName" Type="varchar" MaxLength="50" Nullable="false" />
+        </EntityType>
+        <EntityType Name="cGear">
+          <Key>
+            <PropertyRef Name="cgId" />
+          </Key>
+          <Property Name="cgId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="cgName" Type="varchar" MaxLength="50" Nullable="false" />
+        </EntityType>
+        <EntityType Name="cMake">
+          <Key>
+            <PropertyRef Name="cmId" />
+          </Key>
+          <Property Name="cmId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="cmMake" Type="varchar" MaxLength="100" Nullable="false" />
+        </EntityType>
+        <EntityType Name="cModel">
+          <Key>
+            <PropertyRef Name="cmId" />
+          </Key>
+          <Property Name="cmId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="cmMake" Type="varchar" MaxLength="100" Nullable="false" />
+          <Property Name="cmModel" Type="varchar" MaxLength="100" />
+        </EntityType>
+        <EntityContainer Name="dbCMSModelStoreContainer">
+          <EntitySet Name="cBody" EntityType="Self.cBody" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="cCar" EntityType="Self.cCar" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="cColor" EntityType="Self.cColor" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="cContact" EntityType="Self.cContact" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="cEngine" EntityType="Self.cEngine" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="cFuel" EntityType="Self.cFuel" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="cGear" EntityType="Self.cGear" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="cMake" EntityType="Self.cMake" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="cModel" EntityType="Self.cModel" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="cAdmin" EntityType="Self.cAdmin" store:Type="Tables" store:Schema="dbo">
+            <DefiningQuery>SELECT 
+    [cAdmin].[cId] AS [cId], 
+    [cAdmin].[cUserId] AS [cUserId], 
+    [cAdmin].[cPwd] AS [cPwd], 
+    [cAdmin].[cName] AS [cName]
+    FROM [dbo].[cAdmin] AS [cAdmin]</DefiningQuery>
+          </EntitySet>
+        </EntityContainer>
+      </Schema></edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="dbCMSModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="cBody">
+          <Key>
+            <PropertyRef Name="cbId" />
+          </Key>
+          <Property Name="cbId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="cbName" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <EntityType Name="cCar">
+          <Key>
+            <PropertyRef Name="cId" />
+          </Key>
+          <Property Name="cId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="cMake" Type="String" MaxLength="100" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="cModel" Type="String" MaxLength="100" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="cYear" Type="Int32" Nullable="false" />
+          <Property Name="cGear" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="cBody" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="cFuel" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="cDoor" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="cColor" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="cPhoto" Type="String" MaxLength="250" FixedLength="false" Unicode="true" />
+          <Property Name="cMileage" Type="Int32" Nullable="false" />
+          <Property Name="cEngine" Type="Decimal" Precision="3" Scale="1" Nullable="false" />
+        </EntityType>
+        <EntityType Name="cFuel">
+          <Key>
+            <PropertyRef Name="cfId" />
+          </Key>
+          <Property Name="cfId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="cfName" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+        </EntityType>
+        <EntityType Name="cGear">
+          <Key>
+            <PropertyRef Name="cgId" />
+          </Key>
+          <Property Name="cgId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="cgName" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+        </EntityType>
+        <EntityType Name="cMake">
+          <Key>
+            <PropertyRef Name="cmId" />
+          </Key>
+          <Property Name="cmId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="cmMake" Type="String" MaxLength="100" FixedLength="false" Unicode="false" Nullable="false" />
+        </EntityType>
+        <EntityType Name="cAdmin">
+          <Key>
+            <PropertyRef Name="cId" />
+            <PropertyRef Name="cUserId" />
+            <PropertyRef Name="cPwd" />
+            <PropertyRef Name="cName" />
+          </Key>
+          <Property Name="cId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="cUserId" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="cPwd" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="cName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+        </EntityType>
+        <EntityContainer Name="dbCMSEntities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="cBodies" EntityType="Self.cBody" />
+          <EntitySet Name="cCars" EntityType="Self.cCar" />
+          <EntitySet Name="cFuels" EntityType="Self.cFuel" />
+          <EntitySet Name="cGears" EntityType="Self.cGear" />
+          <EntitySet Name="cMakes" EntityType="Self.cMake" />
+          <EntitySet Name="cAdmins" EntityType="Self.cAdmin" />
+          <EntitySet Name="cContacts" EntityType="dbCMSModel.cContact" />
+          <EntitySet Name="cEngines" EntityType="dbCMSModel.cEngine" />
+          <EntitySet Name="cColors" EntityType="dbCMSModel.cColor" />
+          <EntitySet Name="cModels" EntityType="dbCMSModel.cModel" />
+        </EntityContainer>
+        <EntityType Name="cContact">
+          <Key>
+            <PropertyRef Name="cCId" />
+          </Key>
+          <Property Name="cCId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="cCName" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="cCEmail" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="cCType" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="cCMessage" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="cEngine">
+          <Key>
+            <PropertyRef Name="ceId" />
+          </Key>
+          <Property Name="ceId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="ceType" Type="Decimal" Precision="3" Scale="1" />
+        </EntityType>
+        <EntityType Name="cColor">
+          <Key>
+            <PropertyRef Name="crId" />
+          </Key>
+          <Property Name="crId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="crName" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="cModel">
+          <Key>
+            <PropertyRef Name="cmId" />
+          </Key>
+          <Property Name="cmId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="cmMake" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="cmModel" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+        </EntityType>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="dbCMSModelStoreContainer" CdmEntityContainer="dbCMSEntities">
+          <EntitySetMapping Name="cBodies">
+            <EntityTypeMapping TypeName="dbCMSModel.cBody">
+              <MappingFragment StoreEntitySet="cBody">
+                <ScalarProperty Name="cbId" ColumnName="cbId" />
+                <ScalarProperty Name="cbName" ColumnName="cbName" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="cCars">
+            <EntityTypeMapping TypeName="dbCMSModel.cCar">
+              <MappingFragment StoreEntitySet="cCar">
+                <ScalarProperty Name="cId" ColumnName="cId" />
+                <ScalarProperty Name="cMake" ColumnName="cMake" />
+                <ScalarProperty Name="cModel" ColumnName="cModel" />
+                <ScalarProperty Name="cYear" ColumnName="cYear" />
+                <ScalarProperty Name="cGear" ColumnName="cGear" />
+                <ScalarProperty Name="cBody" ColumnName="cBody" />
+                <ScalarProperty Name="cFuel" ColumnName="cFuel" />
+                <ScalarProperty Name="cDoor" ColumnName="cDoor" />
+                <ScalarProperty Name="cColor" ColumnName="cColor" />
+                <ScalarProperty Name="cPhoto" ColumnName="cPhoto" />
+                <ScalarProperty Name="cMileage" ColumnName="cMileage" />
+                <ScalarProperty Name="cEngine" ColumnName="cEngine" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="cFuels">
+            <EntityTypeMapping TypeName="dbCMSModel.cFuel">
+              <MappingFragment StoreEntitySet="cFuel">
+                <ScalarProperty Name="cfId" ColumnName="cfId" />
+                <ScalarProperty Name="cfName" ColumnName="cfName" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="cGears">
+            <EntityTypeMapping TypeName="dbCMSModel.cGear">
+              <MappingFragment StoreEntitySet="cGear">
+                <ScalarProperty Name="cgId" ColumnName="cgId" />
+                <ScalarProperty Name="cgName" ColumnName="cgName" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="cMakes">
+            <EntityTypeMapping TypeName="dbCMSModel.cMake">
+              <MappingFragment StoreEntitySet="cMake">
+                <ScalarProperty Name="cmId" ColumnName="cmId" />
+                <ScalarProperty Name="cmMake" ColumnName="cmMake" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="cAdmins">
+            <EntityTypeMapping TypeName="dbCMSModel.cAdmin">
+              <MappingFragment StoreEntitySet="cAdmin">
+                <ScalarProperty Name="cId" ColumnName="cId" />
+                <ScalarProperty Name="cUserId" ColumnName="cUserId" />
+                <ScalarProperty Name="cPwd" ColumnName="cPwd" />
+                <ScalarProperty Name="cName" ColumnName="cName" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="cContacts">
+            <EntityTypeMapping TypeName="dbCMSModel.cContact">
+              <MappingFragment StoreEntitySet="cContact">
+                <ScalarProperty Name="cCMessage" ColumnName="cCMessage" />
+                <ScalarProperty Name="cCType" ColumnName="cCType" />
+                <ScalarProperty Name="cCEmail" ColumnName="cCEmail" />
+                <ScalarProperty Name="cCName" ColumnName="cCName" />
+                <ScalarProperty Name="cCId" ColumnName="cCId" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="cEngines">
+            <EntityTypeMapping TypeName="dbCMSModel.cEngine">
+              <MappingFragment StoreEntitySet="cEngine">
+                <ScalarProperty Name="ceType" ColumnName="ceType" />
+                <ScalarProperty Name="ceId" ColumnName="ceId" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="cColors">
+            <EntityTypeMapping TypeName="dbCMSModel.cColor">
+              <MappingFragment StoreEntitySet="cColor">
+                <ScalarProperty Name="crName" ColumnName="crName" />
+                <ScalarProperty Name="crId" ColumnName="crId" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="cModels">
+            <EntityTypeMapping TypeName="dbCMSModel.cModel">
+              <MappingFragment StoreEntitySet="cModel">
+                <ScalarProperty Name="cmModel" ColumnName="cmModel" />
+                <ScalarProperty Name="cmMake" ColumnName="cmMake" />
+                <ScalarProperty Name="cmId" ColumnName="cmId" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="true" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>
