@@ -1,0 +1,163 @@
+﻿body {
+  
+    padding-top: 50px;
+    padding-bottom: 20px;
+   
+}
+
+.body-content {
+    padding-left: 15px;
+    padding-right: 15px;
+}
+
+a {
+    text-decoration: none;
+    color: #000;
+}
+
+.site-header {
+    border-bottom: 1px solid #ccc;
+    padding: .5em 1em;
+}
+
+.site-header::after {
+    content: "";
+    display: table;
+    clear: both;
+}
+
+.site-identity {
+    float: left;
+}
+
+.site-identity h1 {
+    font-size: 1.5em;
+    margin: .7em 0 .3em 0;
+    display: inline-block;
+}
+
+.site-identity img {
+    max-width: 55px;
+    float: left;
+    margin: 0 10px 0 0;
+}
+
+.site-navigation {
+    float: right;
+}
+
+.site-navigation ul, li {
+    margin: 0;
+    padding: 0;
+}
+
+.site-navigation li {
+    display: inline-block;
+    margin: 1.4em 1em 1em 1em;
+}
+
+a.myLinkClass {
+    color: #1c1b1b
+}
+
+a.myLinkClass:active {
+    color: #1c1b1b
+}
+
+a.myLinkClass:link {
+    color: #1c1b1b
+}
+
+a.myLinkClass:visited {
+    color: #1c1b1b
+}
+
+.agile-heading h3 {
+    width: 90%;
+    font-size: 18px;
+    font-weight: 500;
+    font-style: italic;
+    text-align: left;
+    text-transform: capitalize;
+    letter-spacing: 1.8px;
+    line-height: 24px;
+    color: #1c1b1b;
+}
+
+.agile-heading h4 {
+    width: 90%;
+    font-size: 14px;
+    font-weight: 500;
+    font-style: italic;
+    text-align: left;
+    text-transform: capitalize;
+    letter-spacing: 1.8px;
+    line-height: 20px;
+    color: #1c1b1b;
+    margin: 2em 2 2em;
+}
+
+.agile-body {
+    padding: 0;
+    margin: 0;
+    background: url(../Images/bg2.jpg)no-repeat 0px 0px;
+    background-size: cover;
+    background-attachment: fixed;
+    background-position: 50% 50%;
+}
+
+.agile-form {
+    width: 45%;
+    margin: 0 auto;
+    float: left;
+    background: rgba(255, 255, 255, 0.75);
+    padding: 2em;
+    margin-right: 5%;
+    box-sizing: border-box;
+    font-size: 13px;
+    font-weight: 500;
+    font-style: italic;
+    text-align: left;
+    color: #fff;
+}
+
+p1 {
+    font-size: 13px;
+    font-weight: 500;
+    text-align: left;
+    text-transform: capitalize;
+    letter-spacing: 1px;
+    margin: 5px 0;
+    padding: 0;
+    color: #1A1616;
+}
+
+.search-heading h4 {
+    font-size: 11px;
+    font-weight: 500;
+    font-style: italic;
+    text-align: left;
+    text-transform: capitalize;
+    letter-spacing: 1.8px;
+    line-height: 20px;
+    color: #1c1b1b;
+}
+
+.detail-content h4 {
+    width: 90%;
+    font-size: 14px;
+    font-weight: 500;
+    font-style: italic;
+    text-align: left;
+    text-transform: capitalize;
+    letter-spacing: 1.8px;
+    color: #1c1b1b;
+}
+
+
+    /* Set width on the form input elements since they're 100% wide by default */
+
+    input, select, textarea {
+    max-width: 280px;
+}
+    

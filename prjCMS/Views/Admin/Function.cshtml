@@ -1,0 +1,31 @@
+﻿
+@{
+    ViewBag.Title = "CMS Admin Page";
+    Layout = "~/Views/Shared/_LayoutAdmin.cshtml";
+}
+
+<section class="agile-body">
+    <div class="agile-heading">
+        <div class="container">
+            <div class="row about-content">
+                <div class="col-lg-6 info mb-lg-0 mb-5 align-center">
+                    <div class="agile-form">
+                        <h3 style="text-align:center"><span class="image"><b>CMS Admin Page</b><br /></span></h3>
+                        <br />
+                        <ul>
+                            <li style="margin-bottom: 20px;">@Html.ActionLink("Add Record", "Add", new { controller = "Admin" }, new { @class = "myLinkClass" })<br /></li>
+                            <li style="margin-bottom: 20px;">@Html.ActionLink("Update/Delete Record", "Update", new { controller = "Admin" }, new { @class = "myLinkClass" })<br /></li>                      
+                        </ul>
+                        <h4 style="margin-bottom:380px"><span class="image"></span></h4>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+
+
+
+

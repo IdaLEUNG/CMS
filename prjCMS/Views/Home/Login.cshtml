@@ -1,0 +1,53 @@
+﻿@{
+    ViewBag.Title = "CMS Admin Page";
+}
+
+<section class="agile-body">
+    <div class="agile-heading">
+        <div class="container">
+            <div class="row about-content">
+                <div class="col-lg-6 info mb-lg-0 mb-5 align-center">
+                    <div class="agile-form">
+                        <h3><span class="image"><b>CMS Admin Page</b><br /><br /></span></h3>
+
+                        <form method="post" action="@Url.Action("Login")">
+                            <p1><b>User Name</b></p1>
+                            <p1>
+                                <div class="form-group">
+                                    <div class="col-md-10">
+                                        <input type="text" id="cUserId" name="cUserId" required="required" class="form-control" />
+                                    </div>
+                                </div>
+                                <br /> <br />
+                            </p1>
+
+                            <p1><b>Password</b></p1>
+                            <p1>
+                                <div class="form-group">
+                                    <div class="col-md-10">
+                                        <input type="password" id="cPwd" name="cPwd" required="required" class="form-control" />
+                                    </div>
+                                </div>
+                                <br /> <br />
+                            </p1>
+
+
+                            <hr />
+                            <div class="form-group">
+                                <span class="col-md-offset-4 col-md-4">
+                                    <input type="submit" value="Login" class="btn btn-primary btn-sm" />
+                                </span>
+                            </div>
+                            <br /> <br /><br /> <br />
+                            <p style="color:red;">@ViewBag.Message</p>
+                        </form>
+                        <br /> <br /><br /> <br /><br /> <br /><br /> <br /><br /> <br />
+                    </div>
+                </div>
+            </div>
+        </div>
+</section>
+
+
+
+

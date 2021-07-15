@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="6c22cf85eae142a59cab86a7616910dc" Name="Diagram1">
+        <EntityTypeShape EntityType="dbCMSModel.cBody" Width="1.5" PointX="0.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="dbCMSModel.cCar" Width="1.5" PointX="2.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="dbCMSModel.cFuel" Width="1.5" PointX="4.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="dbCMSModel.cGear" Width="1.5" PointX="4.75" PointY="2.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="dbCMSModel.cMake" Width="1.5" PointX="0.75" PointY="2.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="dbCMSModel.cAdmin" Width="1.5" PointX="6.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="dbCMSModel.cContact" Width="1.5" PointX="6.75" PointY="2.625" />
+        <EntityTypeShape EntityType="dbCMSModel.cEngine" Width="1.5" PointX="0.75" PointY="4" />
+        <EntityTypeShape EntityType="dbCMSModel.cColor" Width="1.5" PointX="2.75" PointY="4.25" />
+        <EntityTypeShape EntityType="dbCMSModel.cModel" Width="1.5" PointX="4.75" PointY="3.875" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

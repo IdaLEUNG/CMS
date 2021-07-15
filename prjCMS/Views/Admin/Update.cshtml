@@ -1,0 +1,42 @@
+﻿@model IEnumerable<prjCMS.Models.cCar>
+
+<div class="search-heading">
+    <div class="container">
+        <div class="col-lg-6 info mb-lg-0 mb-5 align-center">
+            <table class="table">
+                @foreach (var item in Model)
+                {
+                    <tr>
+                        <td>
+                            <img src="@item.cPhoto" class="img-responsive" style="width:180px; height: 130px; " />
+                        </td>
+
+                        <td>
+                            <h4>
+                                <strong><b>@item.cMake @item.cModel </b></strong><br />
+                                <b>Year</b> : @item.cYear
+                                <br /><br />
+                                <b>Mileage : </b>@item.cMileage | <b>Doors :</b> @item.cDoor
+                                <br />
+                                @item.cColor | @item.cBody | @item.cEngine L | @item.cGear | @item.cFuel
+                            </h4>
+
+                            <h4>
+                                <a href="@Url.Action("Edit", "Admin",new { cId = @item.cId })" class="btn btn-warning btn-sm" >
+                                    Edit
+                                </a>
+                                <a href="@Url.Action("Delete", "Admin",new { cId = @item.cId })" class="btn btn-danger btn-sm"
+                                   onclick="return confirm('Are you confirm to Delete @item.cMake - @item.cModel?')">
+                                    Delete
+                                </a>
+                            </h4>
+                        </td>
+                    </tr>
+                }
+            </table>
+            <a href="@Url.Action("Function", "Admin")" class="btn btn-default btn-sm">
+                Back to Admin Menu
+            </a>
+        </div>
+    </div>
+</div>
